@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="outer-container">
+    <div class="outer-container container">
       <div class="back">
         <nuxt-link to="../">back to list</nuxt-link>
       </div>
@@ -10,22 +10,22 @@
       <p class="blog-post-meta"><span class="created-at">{{ formattedDate }}</span></p>
     </div>
     <!-- Slice Block Componenet tag -->
-    <slices-block :slices="slices"/>
+    <slices-block-post :slices="slices"/>
   </div>
 </template>
 
 <script>
 //Importing all the slices components
-import SlicesBlock from '~/components/SlicesBlock.vue'
+import SlicesBlockPost from '~/components/SlicesBlockPost.vue'
 
 export default {
   name: 'post',
   components: {
-    SlicesBlock
+    SlicesBlockPost
   },
   head () {
     return {
-      title: 'Prismic Nuxt.js Blog'
+      title: 'Post detail Blog'
     }
   },
   async asyncData({ $prismic, params, error }) {

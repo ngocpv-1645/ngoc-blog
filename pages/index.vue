@@ -2,15 +2,15 @@
   <section>
     <!-- Banner component -->
     <homepage-banner :banner="banner"/>
-    <!-- Slices block component -->
-    <slices-block :slices="slices"/>
     <!-- Check blog posts exist -->
     <div v-if="posts.length !== 0" class="blog-main">
       <!-- Template for blog posts -->
-      <section v-for="post in posts" :key="post.id" v-bind:post="post" class="blog-post">
-        <!-- Here :post="post" passes the data to the component -->
-        <blog-widget :post="post"></blog-widget>
-      </section>
+      <div class="blog-main-content">
+        <section v-for="post in posts" :key="post.id" v-bind:post="post" class="blog-post">
+          <!-- Here :post="post" passes the data to the component -->
+          <blog-widget :post="post"></blog-widget>
+        </section>
+      </div>
     </div>
     <!-- If no blog posts return message -->
     <div v-else class="blog-main">
@@ -35,7 +35,7 @@ export default {
   },
   head () {
     return {
-      title: 'Ngoc blog',
+      title: 'Design Playbook',
     }
   },
   async asyncData({ $prismic, error }) {
@@ -85,7 +85,7 @@ export default {
     border-bottom: 1px solid #DADADA
 
 .blog-main
-  max-width: 700px
+  max-width: 1200px
   margin: auto
   text-align: left
   &.single img
@@ -99,9 +99,16 @@ export default {
     background-size: 2px 2px
     background-position: 0 23px
 
+  &-content
+    display: flex
+    flex-wrap: wrap
+
 .blog-post
   margin: 0
   margin-bottom: 3rem
+  flex: 0 0 33.33333%
+  padding: 15px
+  box-sizing: border-box
 
 @media (max-width: 767px)
   .home

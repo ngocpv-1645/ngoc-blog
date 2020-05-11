@@ -1,11 +1,11 @@
 <template>
   <nuxt-link :to="link">
     <div class="blog-post">
-      <h2>{{ $prismic.asText(post.data.title) }}</h2>
-      <p class="blog-post-meta"><span class="created-at">{{ formattedDate }}</span></p>
       <div class="text-center">
         <img :src="post.data.feature_images.url" class="feature-images"/>
       </div>
+      <h3>{{ $prismic.asText(post.data.title) }}</h3>
+      <p class="blog-post-meta"><span class="created-at">{{ formattedDate }}</span></p>
       <p>{{getFirstParagraph(post)}}</p>
     </div>
   </nuxt-link>
@@ -67,6 +67,7 @@ export default {
   max-width: 100%
   width: auto;
   margin: 0 auto
+  width: 100%
 
 h2
   margin: 0
