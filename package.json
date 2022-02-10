@@ -19,7 +19,7 @@
     "prismic-vue": "^2.0.0"
   },
   "devDependencies": {
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.2",
     "sass-loader": "^8.0.2",
     "webpack": "^4.41.5"
